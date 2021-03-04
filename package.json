@@ -4,7 +4,7 @@
   "description": "Minimum boilerplate code for using ReactJS in Electron",
   "main": "app.js",
   "scripts": {
-    "start": "electron ."
+    "start": "concurrently \"set BROWSER=none && react-scripts start\" \"electron .\""
   },
   "repository": "https://github.com/hungle88/electron-react-starter-kit",
   "keywords": [
@@ -19,12 +19,27 @@
   "devDependencies": {
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "concurrently": "^6.0.0",
     "electron-prebuilt-compile": "^1.6.11",
     "electron-react-devtools": "^0.4.0"
   },
   "dependencies": {
+    "electron": "^12.0.0",
     "python-shell": "^1.0.6",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react": "^15.7.0",
+    "react-dom": "^15.7.0",
+    "react-scripts": "^4.0.3"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

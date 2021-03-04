@@ -13,7 +13,13 @@ let mainWindow
 
 function createWindow () {
   // Create the browser window.
-  mainWindow = new BrowserWindow({width: 800, height: 600, icon:"./src/assets/app-logo.png", show: false})
+  mainWindow = new BrowserWindow({
+    width: 800,
+    height: 600,
+    icon:"./src/assets/app-logo-gray.png",
+    show: false,
+    
+  })
   //Load react server
   mainWindow.loadURL("http://localhost:3000");
   mainWindow.once('ready-to-show', () => {

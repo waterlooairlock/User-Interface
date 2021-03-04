@@ -1,13 +1,12 @@
 // Libraries
-import React from 'react';
+import Navbar from './Navbar'
 
-class App extends React.Component {
-  render (){
-    return (
-           <h1>Hello, World</h1>
-    )
-  }
+function App() {
+  return (
+    <div id="background-img">
+      <Navbar/>
+    </div>
+  );
 }
-
 
 export default App;

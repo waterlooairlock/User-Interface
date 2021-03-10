@@ -1,22 +1,25 @@
 // Libraries
-import React from 'react';
+import Navbar from './Navbar';
+import DashboardPage from './Dashboard';
+import FunctionsPage from './Functions';
+import LogsPage from './Logs';
+import { BrowserRouter as Router, Switch, Route, useLocation } from "react-router-dom";
 
-// Components
-// const App = () => (
-//   <div className="header">
-//     <h1>Hello, World</h1>
-//   </div>
-// );
-
-class App extends React.Component {
-  render (){
-    return (
-      <div className="header">
-           <h1>Hello, World</h1>
+function App() {
+  return (
+    <div id="background-img">
+      <Router>
+      <Navbar/>
+      <div id="main-content">
+          <Switch>
+            <Route strict exact path="/" component={ DashboardPage }></Route>
+            <Route path="/functions" component={ FunctionsPage }></Route>
+            <Route path="/logs" component={ LogsPage }></Route>
+          </Switch>
       </div>
-    )
-  }
+      </Router>
+    </div>
+  );
 }
-
 
 export default App;

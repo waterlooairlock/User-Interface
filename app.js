@@ -13,17 +13,18 @@ let mainWindow
 
 function createWindow () {
   // Create the browser window.
-  mainWindow = new BrowserWindow({width: 800, height: 600})
-  mainWindow.webContents.openDevTools();
-  // and load the index.html of the app.
-  mainWindow.loadURL(url.format({
-    pathname: path.join(__dirname, './src/index.html'),
-    protocol: 'file:',
-    slashes: true
-  }))
-
-  // Open the DevTools.
-  // mainWindow.webContents.openDevTools()
+  mainWindow = new BrowserWindow({
+    width: 800,
+    height: 600,
+    icon:"./src/assets/app-logo-gray.png",
+    show: false,
+    
+  })
+  //Load react server
+  mainWindow.loadURL("http://localhost:3000");
+  mainWindow.once('ready-to-show', () => {
+    mainWindow.show();
+  });
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {

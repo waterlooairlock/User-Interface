@@ -13,10 +13,8 @@ function Navbar(location) {
         const location = useLocation().pathname;
         if (location == "/")
             return 'translateY(0)';
-        else if (location == "/functions")
-            return 'translateY(6.1vh)';
         else if (location == "/logs")
-            return 'translateY(12.5vh)';
+            return 'translateY(6.1vh)';
     }
 
     return (
@@ -32,14 +30,7 @@ function Navbar(location) {
                     <h3 class="nav-text">Dashboard</h3>
                 </div>
             </div></Link>
-            
-            <div className="v-spacer" style={{height: '5vh'}}></div>
-            <Link to="/functions"><div className="nav-content">
-                <div className="nav-tab">
-                    <img class="nav-icon" src={settingsicon}></img>
-                    <h3 class="nav-text">Functions</h3>
-                </div>
-            </div></Link>
+        
             
             <div className="v-spacer" style={{height: '5vh'}}></div>
             <Link to="/logs"><div className="nav-content">

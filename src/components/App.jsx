@@ -12,9 +12,8 @@ function App() {
       <Navbar/>
       <div id="main-content">
           <Switch>
-            <Route strict exact path="/" component={ DashboardPage }></Route>
-            <Route path="/functions" component={ FunctionsPage }></Route>
-            <Route path="/logs" component={ LogsPage }></Route>
+            <Route strict exact path="/"><DashboardPage/></Route>
+            <Route strict exact path="/logs"><LogsPage/></Route>
           </Switch>
       </div>
       </Router>

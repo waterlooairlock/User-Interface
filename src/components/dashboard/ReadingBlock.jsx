@@ -1,14 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from "styled-components";
 import Reading from './Reading';
 
-function ReadingBlock(tempVal, pressureVal, airQualVal) {
+const StyledReadingsContainer = styled.div`
+  display:flex;
+`;
+
+function ReadingBlock(props) {
     return (
-        <div>
-            <Reading val={tempVal} unit={"°C"} name={"Temperature"}/>
-            <Reading val={pressureVal} unit={"kPa"} name={"Pressure"}/>
-            <Reading val={airQualVal} unit={""} name={"Air Quality"}/>
-        </div>
+        <StyledReadingsContainer>
+            <Reading val={props.tempVal} unit={"°C"} name={"Temperature"}/>
+            <Reading val={props.pressureVal} unit={"kPa"} name={"Pressure"}/>
+            <Reading val={props.airQualVal} unit={""} name={"Air Quality"}/>
+        </StyledReadingsContainer>
     );
 }
 

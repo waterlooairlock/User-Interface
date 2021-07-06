@@ -4,6 +4,7 @@ import DashboardPage from './Dashboard';
 import FunctionsPage from './Functions';
 import LogsPage from './Logs';
 import { BrowserRouter as Router, Switch, Route, useLocation } from "react-router-dom";
+import TestApiComponent from './TestApiComponent';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           </Switch>
       </div>
       </Router>
+      <TestApiComponent/>
     </div>
   );
 }

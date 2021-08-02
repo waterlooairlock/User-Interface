@@ -1,5 +1,5 @@
 import React from "react";
-import Chart from "./testchart";
+import Chart from "./Chart";
 
 class Logs extends React.Component {
 

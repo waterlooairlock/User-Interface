@@ -1,7 +1,7 @@
 import React from 'react';
 import ReadingBlock from './dashboard/ReadingBlock';
 import NotifsContainer from "./dashboard/NotifsContainer";
-import Chart from './testchart';
+import Chart from './Chart';
 
 const SAMPLE_NOTIFS = [
     {

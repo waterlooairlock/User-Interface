@@ -4,7 +4,7 @@ import DashboardPage from './Dashboard';
 import FunctionsPage from './Functions';
 import LogsPage from './Logs';
 import { BrowserRouter as Router, Switch, Route, useLocation } from "react-router-dom";
-import TestApiComponent from './TestApiComponent';
+import Logs from './Logs';
 
 function App() {
   return (
@@ -14,11 +14,10 @@ function App() {
       <div id="main-content">
           <Switch>
             <Route strict exact path="/"><DashboardPage/></Route>
-            <Route strict exact path="/logs"><LogsPage/></Route>
+            <Route strict exact path="/logs"><Logs/></Route>
           </Switch>
       </div>
       </Router>
-      <TestApiComponent/>
     </div>
   );
 }

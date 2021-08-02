@@ -9,7 +9,7 @@ const StyledNotifContainer = styled.div`
   right: 0;
   top: 0;
   background: #2d2d2d;
-  width: 300px;
+  width: 280px;
 `
 
 const StyledListText = styled(ListItemText)`

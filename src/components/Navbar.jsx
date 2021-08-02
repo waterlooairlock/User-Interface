@@ -6,7 +6,10 @@ import logo from '../assets/banner-logo-white.png';
 import homeicon from '../assets/home-icon.png';
 import settingsicon from '../assets/settings-icon.png';
 import logsicon from '../assets/logs-icon.png';
-
+import ButtonGroup from '@material-ui/core/ButtonGroup';
+import Button from '@material-ui/core/Button';
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 function Navbar(location) {
 
     function getPos() {
@@ -15,6 +18,14 @@ function Navbar(location) {
             return 'translateY(0)';
         else if (location == "/logs")
             return 'translateY(6.1vh)';
+    }
+
+    const sendEvent = (eventType) => {
+        fetch(`localhost:8080/airlockevent/${eventType}`, {
+            method:"post",
+            body:data
+        }).then(res => res.json())
+
     }
 
     return (
@@ -41,8 +52,14 @@ function Navbar(location) {
             </div></Link>
             
             <div className="v-spacer" style={{height: '43vh'}}></div>
-            <h3 className="nav-indicator nav-content">Secured</h3>
-            <h3 className="nav-indicator nav-content" style={{width: '90%'}}>Pressurized</h3>
+
+            <ButtonGroup style={{"justifyContent": "center"}} className="nav-content" disableElevation variant="contained" color="primary">
+                <Button onClick={() => sendEvent('enter')} variant="contained" color="green" style={{width:'130px'}} size="large" startIcon={<ArrowBackIcon />}>Enter</Button> 
+            </ButtonGroup>
+
+            <ButtonGroup style={{"justifyContent": "center"}} className="nav-content" disableElevation variant="contained" color="primary">
+                <Button onClick={() => sendEvent('exit')} variant="contained" color="secondary" style={{width:'130px'}} size="large" startIcon={<ArrowForwardIcon />}>Exit</Button> 
+            </ButtonGroup>
         </div>
     );
 }

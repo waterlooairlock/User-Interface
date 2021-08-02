@@ -1,11 +1,16 @@
-import React, { useState } from 'react';
+import React from "react";
+import Chart from "./testchart";
 
-function LogsPage() {
-    return(
-        <div className="fade-in">
-            <h1>Logs Page</h1>
-        </div>
-    )
+class Logs extends React.Component {
+
+  render() {
+
+    return (
+      <div style={{marginTop: "30px"}}>
+        <Chart></Chart>
+      </div>
+    );
+  }
 }
 
-export default LogsPage;
+export default Logs;

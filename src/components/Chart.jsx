@@ -23,7 +23,7 @@ export default class Chart extends PureComponent {
     // At the end of each url, I added the sensor_id.
     // I have no clue if these sensor readings are correct, so I am adding them temporarily
 
-    const pressureURL = 'http://127.0.0.1:8080/arduinos/get_readings?sensor_type=pressure&sensor_id=1'
+    const pressureURL = 'http://127.0.0.1:8080/arduinos/get_multiple_readings?sensor_type=pressure&sensor_id=1'
     const pressureResponse = await fetch(pressureURL)
 
     const temperatureURL = 'http://127.0.0.1:8080/arduinos/get_multiple_readings?sensor_type=temperature&sensor_id=2'
